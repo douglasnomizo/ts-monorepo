@@ -1,0 +1,16 @@
+version: '3.7'
+
+services:
+  mq:
+    image: "rabbitmq:3-management"
+    ports:
+      - "15672:15672"
+      - "5672:5672"  
+  pg:
+    image: postgres
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=dhln
+      - POSTGRES_DB=db
+      - POSTGRES_PASSWORD=pass
